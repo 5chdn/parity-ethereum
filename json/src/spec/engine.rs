@@ -16,7 +16,7 @@
 
 //! Engine deserialization.
 
-use super::{Ethash, BasicAuthority, AuthorityRound, Tendermint, NullEngine, InstantSeal};
+use super::{Ethash, BasicAuthority, AuthorityRound, Tendermint, NullEngine, InstantSeal, Clique};
 
 /// Engine deserialization.
 #[derive(Debug, PartialEq, Deserialize)]
@@ -34,7 +34,9 @@ pub enum Engine {
 	/// AuthorityRound engine.
 	AuthorityRound(AuthorityRound),
 	/// Tendermint engine.
-	Tendermint(Tendermint)
+	Tendermint(Tendermint),
+	/// Clique engine.
+	Clique(Clique)
 }
 
 #[cfg(test)]
